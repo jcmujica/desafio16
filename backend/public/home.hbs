@@ -1,0 +1,190 @@
+<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6 fixed w-full">
+    <div class="flex items-center w-full justify-end">
+        <div class="text-sm flex">
+            <a href="/register"
+                class="block lg:inline-block lg:mt-0 text-white hover:text-white hover:bg-blue-700 mr-4 text-right py-2 px-6 rounded">
+                Registro
+            </a>
+            <a href="/login"
+                class="block lg:inline-block lg:mt-0 text-white hover:text-white hover:bg-blue-700 mr-4 text-right py-2 px-6 rounded">
+                Login
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md pt-24" role="alert">
+    <div class="flex">
+        <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20">
+                <path
+                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+            </svg></div>
+        <div class="flex justify-between items-center w-full">
+            <p class="font-bold">Bienvenido {{{user.username}}}</p>
+            <button id="logout" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="logout">
+                Desloguearse
+            </button>
+        </div>
+    </div>
+</div>
+<div class="flex min-h-screen h-full" onsubmit="return submitProduct(this)">
+    <div class="w-full h-full flex flex-col items-center bg-slate-50 pt-36">
+        <h1 class="font-bold text-3xl mb-10">Ingrese Producto</h1>
+        <div>
+            <form class="w-full max-w-lg p-6">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
+                            Nombre
+                        </label>
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            id="name" type="text" name="name">
+                    </div>
+                    <div class="w-full md:w-1/2 px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="price">
+                            Precio
+                        </label>
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="price" type="text" name="price">
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="image">
+                            Foto URL
+                        </label>
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="image" type="text" placeholder="https://" name="thumbnail">
+                    </div>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    id="submitProductButton">
+                    Enviar
+                </button>
+            </form>
+        </div>
+
+        <h1 class="font-bold text-3xl mb-10">Chat</h1>
+        <div class="w-full max-w-lg p-6">
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="firstName">
+                        Nombre
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="firstName" type="text" name="firstName">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="lastName">
+                        Apellido
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="lastName" type="text" name="lastName">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="age">
+                        Edad
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="age" type="text" name="age">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="alias">
+                        Alias
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="alias" type="text" name="alias">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="avatar">
+                        Avatar
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="avatar" type="text" name="avatar">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+                        Email
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="email" type="text" name="email">
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
+                        Mensaje
+                    </label>
+                    <div class="flex">
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 rounded-r-none"
+                            id="message" type="text" name="message">
+                        <button
+                            class="bg-blue-500 h-max hover:bg-blue-700 text-white font-bold py-2 px-4 rounded rounded-l-none mb-3"
+                            id="submitMessageButton">
+                            Enviar
+                        </button>
+                    </div>
+                    <div class="w-full text-red-700 hidden" id="error">
+                        Debe completar todos los campos para enviar un mensaje!
+                    </div>
+                    <div class="w-full text-red-700 hidden" id="compression">
+                        {{compression}}
+                    </div>
+                    <div id="chatbox" class="mt-12 min-h-16 w-full bg-white py-3 px-4 mb-3">
+                        {{#if messages.length}}
+                            {{#each messages}}
+                                <p>
+                                    <span class="font-bold text-blue-500">{{author.alias}}</span>
+                                    <span class="font-bold text-stone-500 text-xs">{{author.date}}</span>:
+                                    <span class="text-gray-700 italic">{{text}}</span>
+                                </p>
+                            {{/each}}
+                        {{else}}
+                            <span class="block sm:inline">No hay mensajes.</span>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full min-h-screen h-full flex flex-col items-center pt-36 ">
+        <h1 class="font-bold text-3xl mb-10">Productos</h1>
+        {{#if products.length}}
+            <table class="table-auto mb-16">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-1">Nombre</th>
+                        <th class="px-4 py-1">Precio</th>
+                        <th class="px-4 py-1">Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                        <tr>
+                            <td class="border px-4 py-1">{{{name}}}</td>
+                            <td class="border px-4 py-1">{{{price}}}</td>
+                            <td class="border px-4 py-1">
+                                <div class="rounded-full w-24 h-24 bg-[url({{thumbnail}})] bg-cover bg-no-repeat"></div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Ups!</strong>
+                <span class="block sm:inline">No hay productos.</span>
+            </div>
+        {{/if}}
+    </div>
+</div>

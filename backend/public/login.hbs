@@ -1,0 +1,46 @@
+<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6 fixed w-full">
+    <div class="flex items-center w-full justify-end">
+        <div class="text-sm flex">
+            <a href="/"
+                class="block lg:inline-block lg:mt-0 text-white hover:text-white hover:bg-blue-700 mr-4 text-right py-2 px-6 rounded">
+                Inicio
+            </a>
+            <a href="/register"
+                class="block lg:inline-block lg:mt-0 text-white hover:text-white hover:bg-blue-700 mr-4 text-right py-2 px-6 rounded">
+                Registro
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+            <h1 class="mb-8 text-3xl text-center">Ingrese a su cuenta</h1>
+
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                placeholder="Email" id="username" />
+
+            <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+                placeholder="Password" id="password" />
+
+            <button type="submit"
+                class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1 bg-blue-500"
+                id="login">
+                Ingresar
+            </button>
+        </div>
+        <div class="text-grey-dark mt-6">
+            No tienes una cuenta?
+            <a class="no-underline border-b border-blue text-blue" href="/register">
+                Registro
+            </a>.
+        </div>
+        {{#if error}}
+            <div class="text-red-500 text-center mb-4" id="error">
+                <span class="block">
+                    <span class="block" id="error-message">{{{error}}}</span>
+                </span>
+            </div>
+        {{/if}}
+    </div>
+</div>

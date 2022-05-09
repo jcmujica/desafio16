@@ -27,6 +27,7 @@
     "minimist": "^1.2.6",
     "mongoose": "^6.2.9",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.16",
     "normalizr": "^3.6.1",
     "socket.io": "^4.4.1"
   },

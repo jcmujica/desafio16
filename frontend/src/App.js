@@ -1,6 +1,6 @@
 import './App.css';
 import { Home } from 'pages/Home';
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Login } from 'pages/Login';
 import { Register } from 'pages/Register';
 import { AuthProvider } from 'contexts/authContext';
@@ -10,12 +10,12 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Switch>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
-        </Switch>
+        </Routes>
       </AuthProvider>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { Layout } from 'components/Layout'
-import { AuthContext } from 'contexts/authContext'; import { Link } from 'react-router-dom';
-+
+import { AuthContext } from 'contexts/authContext'; 
+import { Link } from 'react-router-dom';
 
 export const Register = () => {
     const [error, setError] = useState(null);

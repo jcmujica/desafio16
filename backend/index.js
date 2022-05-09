@@ -12,7 +12,7 @@ const Productos = require('./productos');
 const Mensajes = require('./mensajes');
 const Usuarios = require('./usuarios');
 const { options: mongoOptions } = require('./db/mongo/config');
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 const config = require('./db/firebase/config');
 const childProcess = require('child_process');
 

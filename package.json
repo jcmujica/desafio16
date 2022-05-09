@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && nodemon app.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",

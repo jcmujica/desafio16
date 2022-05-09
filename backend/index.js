@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -42,10 +43,10 @@ const app = express();
 const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 
-
 dotEnvConfig();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '../frontend/build')))
 app.use(cors());
 app.use(cookieParser());
 app.use(session({
@@ -125,8 +126,11 @@ app.get('/api/randoms', (req, res) => {
     child.on('message', (data) => {
         res.send(data);
     });
-
 });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/../frontend/build/index.html'))
+})
 
 io.on('connection', async (socket) => {
     console.log('Cliente conectado');

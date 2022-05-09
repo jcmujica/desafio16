@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend && node index.js",
+    "start": "cd backend && nodemon index.js",
     "frontend": "cd frontend && npm start",
     "backend": "cd backend && nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\"",

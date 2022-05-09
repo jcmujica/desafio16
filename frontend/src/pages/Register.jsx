@@ -1,6 +1,7 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { Layout } from 'components/Layout'
-import { AuthContext } from 'contexts/authContext';
+import { AuthContext } from 'contexts/authContext'; import { Link } from 'react-router-dom';
++
 
 export const Register = () => {
     const [error, setError] = useState(null);
@@ -55,9 +56,11 @@ export const Register = () => {
                     </div>
                     <div className="text-grey-dark mt-6">
                         {"Ya tienes una cuenta? "}
-                        <a className="no-underline border-b border-blue text-blue" href="/login">
-                            Login
-                        </a>
+                        <Link to="/login">
+                            <a className="no-underline border-b border-blue text-blue" >
+                                Login
+                            </a>
+                        </Link>
                     </div>
                     {error &&
                         <div className="text-red-500 text-center mb-4" id="error">

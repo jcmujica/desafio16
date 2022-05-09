@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react'
 import { Layout } from 'components/Layout'
 import { AuthContext } from 'contexts/authContext';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
     const [error, setError] = useState(null);
@@ -54,9 +55,11 @@ export const Login = () => {
                     </div>
                     <div className="text-grey-dark mt-6">
                         {"No tienes una cuenta? "}
-                        <a className="no-underline border-b border-blue text-blue" href="/register">
-                            Registro
-                        </a>
+                        <Link to="/register">
+                            <a className="no-underline border-b border-blue text-blue">
+                                Registro
+                            </a>
+                        </Link>
                     </div>
                     {error &&
                         <div className="text-red-500 text-center mb-4" id="error">
